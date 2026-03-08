@@ -1,2 +1,10 @@
 textgame/
 intro/
+*.mpack
+*.vsidx
+.vs/Interactive Text/copilot-chat/
+.vs/VSWorkspaceState.json
+Interactive Text/x64/Debug/Interactive Text.log
+Interactive Text/x64/Debug/Interactive Text.tlog/CL.command.1.tlog
+Interactive Text/x64/Debug/Interactive Text.tlog/Interactive Text.lastbuildstate
+Interactive Text/x64/Debug/Interactive Text.tlog/unsuccessfulbuild
