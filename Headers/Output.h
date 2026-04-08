@@ -10,7 +10,19 @@ o(suppress_history) to prevent the text afterward from appearing in the scrollba
 #include <vector>
 #include <functional>
 #include <array>
+#ifdef __EMSCRIPTEN__
 #include <emscripten/emscripten.h>
+#else
+// When building natively (e.g., MSVC) provide no-op fallbacks for Emscripten
+// inline-JS macros so the code can compile without Emscripten headers.
+#ifndef EM_ASM
+#define EM_ASM(...) (void)0
+#endif
+#ifndef EM_ASM_
+#define EM_ASM_(...) (void)0
+#endif
+#endif
+#include <string_view>
 
 constexpr int link_count = 8;
 
@@ -173,4 +185,5 @@ public:
 		history_string.clear();
 	}
 };
-extern html_output o;
+
+extern html_output htmlOutput;

@@ -1,9 +1,13 @@
-#include "o.h"
+#include "Output.h"
+
+#include <functional>
+#include <string>
 
 std::string history_string;
-html_output o;
+html_output htmlOutput;
 
 extern "C" {
+
 	void EMSCRIPTEN_KEEPALIVE i(int chosen_link) //if clicked link, count up from 0 sequentially. keyboard press, count down from -1 sequentially, with neutral link = -link_count - 1.
 	{
 		int link_in_order;
